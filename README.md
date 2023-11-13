@@ -3,11 +3,11 @@
 객체인식을 통해서 핸드폰을 인식하는 경우 DB에 저장하고 이를 기록하는 시스템
 
 
----py
+'''py
 pip install opencv-python
 pip install mysql.connector
 pip install numpy
----
+'''
 
 Raspberry pi3에서 돌릴 수 있으나 fps가 1미만으로 측정됨.
 
