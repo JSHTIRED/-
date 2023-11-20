@@ -1,3 +1,4 @@
+
 import cv2
 import numpy as np
 import mysql.connector
@@ -5,6 +6,7 @@ import time
 import datetime
 
 from numpy._typing import _128Bit
+"""
 def create_connection():
     
     connection = mysql.connector.connect(
@@ -27,7 +29,7 @@ def insert_data(connection, data):
 
 
     connection.commit()
-    
+"""
 
 classNames = { 1: 'person', 77: 'cell phone'}
 def id_class_name(class_id, classes):
@@ -44,7 +46,7 @@ def check_overlap(box1, box2):
     overlap = max(0, x2_min - x1_max) * max(0, y2_min - y1_max)
     return overlap > 0
 
-"""
+
 camera = cv2.VideoCapture(0)
 camera.set(3, 1280)
 camera.set(4, 720)
@@ -84,10 +86,10 @@ def main():
                         
                 if class_id == 77 and confidence > 0.7:  
                     knife_boxes.append([int(box_x), int(box_y), int(box_width), int(box_height)])
-                    cv2.rectangle(image, (int(box_x), int(box_y)), (int(box_width), int(box_height)), (255, 0, 0), 1)
+                    cv2.rectangle(image, (int(box_x), int(box_y)), (int(box_width), int(box_height)), (255, 0, 0), -1) #-1은 내부를 색칠하는 것
                     label = f"cell phone: {confidence:.2f}"
                     cv2.putText(image, label, (int(box_x), int(box_y) - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1)
-              
+                    """
                     time2=time.time() 
                     if time2-time1>5:
                     
@@ -98,7 +100,7 @@ def main():
                         insert_data(conn, data)
                         time1= time.time()
                         conn.close()
-                        
+                    """    
             for p_box in person_boxes:
                 for k_box in knife_boxes:
                     if check_overlap(p_box, k_box):
@@ -114,8 +116,10 @@ def main():
             cv2.imshow('Detection', image)
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
-""" 
+    except KeyboardInterrupt:
+            pass
 
+"""
 try:
   def main():
         timer=time.time() 
@@ -127,7 +131,7 @@ try:
         conn.close()
 except KeyboardInterrupt:
         pass
-    
+   """ 
 if __name__ == '__main__':
     main()  
 
