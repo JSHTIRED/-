@@ -19,6 +19,6 @@ Raspberry pi3에서 돌릴 수 있으나 fps가 1미만으로 측정됨.
 
 ![image](https://github.com/JSHTIRED/-/assets/143377935/82fafbb0-9b53-43c9-b7fd-ad66fd613c1c)
 
----정보보호를 위해서 핸드폰 감지시 가리는 사진---
+--- 정보보호를 위해서 핸드폰 감지시 가리는 사진 ---
 
 ![test](https://github.com/JSHTIRED/control_study_room/assets/143377935/f3bc5ca6-292b-4f16-ba91-b42ec80b6702)
