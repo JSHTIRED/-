@@ -1,8 +1,8 @@
 # -독서실 관리 시스템  
 
-객체인식을 통해서 핸드폰을 인식하는 경우 DB에 저장하고 이를 기록하는 시스템
+객체인식을 통해서 핸드폰을 인식하는 경우 DB에 저장하고 이를 기록하는 시스템  
 또한 frozen_inference_graph.pb 파일을 별도로 다운을 받아야지 가능함  
-(A system that stores and records in the DB when a mobile phone is recognized through object recognition
+(A system that stores and records in the DB when a mobile phone is recognized through object recognition  
 Also, you must download the frozen_inference_graph.pb file separately.)
 ```py
 pip install opencv-python
