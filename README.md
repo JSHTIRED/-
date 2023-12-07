@@ -26,3 +26,23 @@ Raspberry pi3에서 돌릴 수 있으나 fps가 1미만으로 측정됨.
 (To protect information, photos are hidden when a cell phone is detected.)
 
 ![test](https://github.com/JSHTIRED/control_study_room/assets/143377935/f3bc5ca6-292b-4f16-ba91-b42ec80b6702)
+
+
+```mermaid
+sequenceDiagram
+    participant server
+    participant client
+    participant DB
+    participant user
+loop if_detect_person
+    client->>server : send image by TCP/ip or UDP
+    server->>server : check cell_phone by mobilenet_v2 
+    loop if_detect_cell_phone
+      server->>DB : save object, time 
+      server->>user : send message "he use phone"
+    end
+    loop if_user_want
+      user->>DB : check himself
+    end
+end
+```
